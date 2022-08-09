@@ -10,17 +10,13 @@
 ##### A. download and install application.
 1. make sure you have installed mongodb on your system, [here](https://www.mongodb.com/docs/manual/administration/install-community/ "Here") is the installation link & make sure you have installed nodejs with npm, [here](https://nodejs.org/en/download/ "here") is the download link.
 2. on terminal run the following command to download the application :<br>
-`git clone https://github.com/m0x31h0x64i/phone-book`
-3. after that you need to set your own env variables. under project folder create a folder called config then under config folder create a file called **dev.env** and set values for :<br>
-- PORT
-- JWT_SECRET
-- MONGODB_URL
-- SMTP
-- USER
-- PASS
-4. then : <br>
-`npm i && npm run dev`
-
+`git clone https://github.com/m0x31h0x64i/task-manager`
+3. then : <br>
+`cd task-manager && npm i`
+4. after that you need to set your own env variables. such as (PORT, MONGODB_URL, JWT_SECRET, SMTP, SMTP_PORT, USER, PASS). run following command to start createing dev env variables :<br>
+`npm run env`
+if you **dont have SMTP** then just hit enter and ignore it plus you have to comment **lines 19 and 97 of users router**. then run application with :<br>
+`npm run dev`
 ##### B. try demo to run the application. (https://key7789456.herokuapp.com)
 
 ------------
@@ -36,5 +32,13 @@
 
 ### Notes :
 - libraries which i used to make this application :<br>
-express, mongoose, validator, jsonwebtoken, bcryptjs, multer, sharp, nodemailer
+express, mongoose, validator, jsonwebtoken, bcryptjs, multer, sharp, nodemailer, prompt-sync, jest, supertest.
 - i learned how i can work with new libraries.
+
+
+------------
+
+### v2.0.0 update notes :
+- dev and test env creation added.
+- test cases added.
+

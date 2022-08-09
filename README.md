@@ -14,7 +14,7 @@
 3. then : <br>
 `cd task-manager && npm i`
 4. after that you need to set your own env variables. such as (PORT, MONGODB_URL, JWT_SECRET, SMTP, SMTP_PORT, USER, PASS). run following command to start createing dev env variables :<br>
-`npm run env`
+`npm run env`<br>
 if you **dont have SMTP** then just hit enter and ignore it plus you have to comment **lines 19 and 97 of users router**. then run application with :<br>
 `npm run dev`
 ##### B. try demo to run the application. (https://key7789456.herokuapp.com)

@@ -4,7 +4,7 @@ const users = require('../models/users')
 const auth = require('../middleware/authentication/auth')
 const upload = require('../middleware/upload/up')
 const sharp = require('sharp')
-const { sendWelcomeEmail, sendCancelationEmail } = require('../email/account')
+const { sendWelcomeEmail, sendCancelationEmail } = require('../email/mailer')
 
 router.post('/users', async (req, res) => {
     try {
@@ -104,7 +104,7 @@ router.delete('/users/me', auth, async (req, res) => {
 
 router.post('/users/me/avatar', auth, upload.single('avatar'), async (req, res) => {
 
-    const buffer = await sharp(req.user.avatar).resize({ width: 250, height: 250 }).png().toBuffer()
+    const buffer = await sharp(req.file.buffer).resize({ width: 250, height: 250 }).png().toBuffer()
     req.user.avatar = buffer
 
     await req.user.save()
